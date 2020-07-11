@@ -31,7 +31,7 @@ require("child_process").exec("npm install", async function (err, stdout) {
   let config;
   async function setupConfig() {
     config = await yml("./config.yml");
-    bot.login(config.Bot_Token);
+    bot.login(process.env.token);
   }
   setupConfig();
   bot.on("ready", async () => {
